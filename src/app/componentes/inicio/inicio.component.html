@@ -1,0 +1,24 @@
+<p>Login De Administrador</p>
+
+<p>Ingrese el Username</p>
+<input type="text" class="form-control" [(ngModel)]="Username"> 
+
+
+<p>Ingrese la Password</p>
+<input type="text" class="form-control" [(ngModel)]="Password"> 
+
+
+     <div>
+    <button id="basic" type="button" mat-button (click)="Login()">
+     Login
+    </button>
+    <div>
+
+
+     <div>
+     <strong> Navegacion en Modo Administrador Permitida : {{respuesta}} </strong>
+    </div>
+
+    <p>Para loguearse puede usar Username: "root"  Password :"root", las unicas pestañas que estaran disponibles sin no esta logueado como administrador  
+es Busqueda y reseña correspondientes al modo turista</p>
+

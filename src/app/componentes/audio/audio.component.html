@@ -1,0 +1,15 @@
+
+<h1>Agregar Audio</h1>
+
+<input type="text" class="form-control" [(ngModel)]="elAudioFormulario.Nombre" placeholder="NombreAudio">
+<input type="number" class="form-control" [(ngModel)]="elAudioFormulario.Duracion" placeholder="DuracionAudio">
+<input type="text" class="form-control" [(ngModel)]="elAudioFormulario.NombreCreador" placeholder="NombreCreador">
+<input type="text" class="form-control" [(ngModel)]="elAudioFormulario.UrlImagen" placeholder="UrlImagen">
+<input type="text" class="form-control" [(ngModel)]="elAudioFormulario.UrlMp3" placeholder="UrlMp3">
+
+<button id="basic" type="button" mat-button (click)="Agregar(elAudioFormulario)"> Agregar Audio </button>
+
+<div>
+<strong> {{respuesta | json}}</strong>
+</div>
+
