@@ -15,8 +15,12 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTableModule} from '@angular/material/table';
 import { AudioComponent } from './componentes/audio/audio.component';
 import { PlaylistComponent } from './componentes/playlist/playlist.component';
+import { CategoriaComponent } from './componentes/categoria/categoria.component';
+import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
+import { PsicologoComponent } from './componentes/psicologo/psicologo.component';
 
 
 
@@ -28,6 +32,9 @@ import { PlaylistComponent } from './componentes/playlist/playlist.component';
     InicioComponent,
     AudioComponent,
     PlaylistComponent,
+    CategoriaComponent,
+    NavegacionComponent,
+    PsicologoComponent,
    
   ],
   imports: [
@@ -41,7 +48,8 @@ import { PlaylistComponent } from './componentes/playlist/playlist.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule
    
   ],
   providers: [],

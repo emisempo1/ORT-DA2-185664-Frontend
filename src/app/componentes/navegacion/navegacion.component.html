@@ -1,0 +1,60 @@
+<p>Seleccione la Categoria a Navegar</p>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Seleccione el nombre de la Categoria</mat-label>
+    <mat-select [(ngModel)]= "NombreCategoria" >
+        <mat-option value="Dormir">Dormir</mat-option>
+      <mat-option value="Meditar">Meditar</mat-option>
+      <mat-option value="Musica">Musica</mat-option>
+      <mat-option value="Cuerpo">Cuerpo</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  
+  <div>
+  <button id="basic" type="button" mat-button (click)="ObtenerPlaylist()">
+   Mostrar Playlist
+   </button>
+  </div>
+
+  <mat-accordion [multi]="false" #accordion="matAccordion">
+  <mat-expansion-panel [expanded]="isOpen"  *ngFor="let playlist of listaPlaylist ;let indexOfelement=index;">
+    <mat-expansion-panel-header  (click)="ObtenerAudios(indexOfelement)">
+    Nombre Playlist :  {{playlist.Nombre}}   
+  </mat-expansion-panel-header> 
+
+<div>
+<img class="logo" src={{unaPlaylist?.Url}} height="200" width="200">
+</div>
+
+<strong> Descripcion  :  {{unaPlaylist?.Descripcion}}   </strong>
+
+            <ng-template matExpansionPanelContent>
+                <mat-expansion-panel [expanded]="isOpen"  *ngFor="let unAudio of listaAudios">
+                  <mat-expansion-panel-header>
+                  Nombre Audio :  {{unAudio.Nombre}} 
+                  </mat-expansion-panel-header>  
+                  
+                  <div>
+                  <img class="logo" src={{unAudio?.UrlImagen}} height="200" width="200">
+                  </div>
+
+                  <a href ={{unAudio?.UrlMp3}} target="_blank">        Dale Play.!</a>
+
+              </mat-expansion-panel>
+              
+              
+          </ng-template>
+
+
+</mat-expansion-panel>
+</mat-accordion>
+
+
+
+
+
+
+
+

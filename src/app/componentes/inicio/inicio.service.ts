@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
-import {PuntoTuristicoI} from '../../models/puntoTuristicoModel'
-import {BusquedaI} from '../../models/busquedaModel'
-import {PropuestaI} from '../../models/PropuestaModel'
 import {Observable, throwError} from 'rxjs'
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http'
 import {catchError,map,tap} from 'rxjs/operators'
 import {environment} from '../../../environments/environment'
 
 
-import {RegionI} from '../../models/RegionModel'
 
 @Injectable({
   providedIn: 'root'

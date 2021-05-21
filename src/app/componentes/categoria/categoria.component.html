@@ -1,0 +1,43 @@
+<h1>Agregar Categoria</h1>
+
+
+<mat-form-field appearance="fill">
+    <mat-label>Seleccione el nombre de la Categoria</mat-label>
+    <mat-select [(ngModel)]= "categoriaFormulario.NombreCategoria" >
+        <mat-option value="Dormir">Dormir</mat-option>
+      <mat-option value="Meditar">Meditar</mat-option>
+      <mat-option value="Musica">Musica</mat-option>
+      <mat-option value="Cuerpo">Cuerpo</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+
+<br>
+<table mat-table [dataSource]="categoriaFormulario.ListaPlaylist" class="mat-elevation-z8">
+  <ng-container matColumnDef="NombrePlaylist">
+    <th mat-header-cell *matHeaderCellDef> Nombre Playlist </th>
+    <td mat-cell *matCellDef="let element"> {{element}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br>
+
+<input type="text" class="form-control" [(ngModel)]= "PlaylistAAgregar" placeholder="NombrePlaylist">
+<br>
+<br>
+
+<button id="basic" type="button" mat-button (click)="AgregarPlaylistDelFormulario(PlaylistAAgregar)"> Agregar Playlist </button>
+<button id="basic" type="button" mat-button (click)="EliminarPlaylistDelFormulario()"> Eliminar Playlist </button>
+<br>
+<br>
+  
+<button id="basic" type="button" mat-button (click)="Agregar()"> Agregar Categoria </button>
+
+<div>
+<strong> {{respuesta | json}}</strong>
+</div>
+

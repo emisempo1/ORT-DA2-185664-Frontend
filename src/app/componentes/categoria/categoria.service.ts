@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AudioI} from '../../models/AudioModel'
+import {CategoriaI} from '../../models/CategoriaModel'
 import {Observable, throwError} from 'rxjs'
 import { HttpClient, HttpErrorResponse, HttpHeaders,HttpParams,HttpRequest } from '@angular/common/http'
 import {catchError,map,tap} from 'rxjs/operators'
@@ -9,19 +9,17 @@ import {environment} from '../../../environments/environment'
   providedIn: 'root'
 })
 
-export class AudioService {
+export class CategoriaService {
 
-private url = environment.apiUrl + '/Audios';
+private url = environment.apiUrl + '/Categorias';
 
  constructor (private http: HttpClient){}
 
-Obtener():Observable<AudioI[]>{
-  return this.http.get<AudioI[]>(this.url).pipe(catchError(this.handleError)); 
+
+Agregar(Categoria: CategoriaI ):Observable<string>{
+  return this.http.post<string>(this.url,Categoria).pipe(catchError(this.handleError));
 }
 
-Agregar(Audio: AudioI ):Observable<string>{
-  return this.http.post<string>(this.url,Audio).pipe(catchError(this.handleError));
-}
 
 handleError(error: HttpErrorResponse){
 let message: string;
@@ -32,6 +30,5 @@ message = error.error;
 }
 return throwError(message);
 }
-
 
 }
