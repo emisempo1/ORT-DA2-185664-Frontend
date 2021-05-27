@@ -1,1 +1,72 @@
-<p>psicologo works!</p>
+
+<h1>Agregar Psicologo</h1>
+
+<input type="text" class="form-control" [(ngModel)]=   "elPsicologoFormulario.Email" placeholder="EmailPsicologo">
+
+<input type="text" class="form-control" [(ngModel)]= "elPsicologoFormulario.Nombre" placeholder="Nombre">
+
+
+<br>
+<mat-form-field appearance="fill">
+  <mat-label>Seleccione el tipo de Consulta</mat-label>
+  <mat-select [(ngModel)]= "elPsicologoFormulario.TipodeConsulta" >
+      <mat-option value="VideoLlamada">VideoLlamada</mat-option>
+    <mat-option value="Presencial">Presencial</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+
+<input type="text" class="form-control" [(ngModel)]=  "elPsicologoFormulario.DireccionFisica" placeholder="DireccionFisica">
+
+
+<br>
+<table mat-table [dataSource]="elPsicologoFormulario.ProblematicasEspecializadas" class="mat-elevation-z8">
+  <ng-container matColumnDef="NombreAudio">
+    <th mat-header-cell *matHeaderCellDef> Especializaciones </th>
+    <td mat-cell *matCellDef="let element"> {{element}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br>
+   
+   
+<mat-form-field appearance="fill">
+  <mat-label>Especialidades</mat-label>
+  <mat-select [(ngModel)]= "PsicologoAAgregar" >
+      <mat-option value="Depresion">Depresion</mat-option>
+    <mat-option value="Estres">Estres</mat-option>
+    <mat-option value="Ansiedad">Ansiedad</mat-option>
+    <mat-option value="Autoestima">Autoestima</mat-option>
+    <mat-option value="Enojo">Enojo</mat-option>
+    <mat-option value="Relaciones">Relaciones</mat-option>
+    <mat-option value="Duelo">Duelo</mat-option>
+    <mat-option value="Otros">Otros</mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+   <br>
+   <br>
+   
+   <button id="basic" type="button" mat-button (click)="AgregarProblematicaDelFormulario(PsicologoAAgregar)"> Agregar Especialidad </button>
+   <button id="basic" type="button" mat-button (click)="EliminarProblematicaDelFormulario()"> Eliminar Especiualidad </button>
+   <br>
+   <br>
+
+
+<button id="basic" type="button" mat-button (click)="Agregar(elPsicologoFormulario)"> Agregar Psicologo </button>
+
+<div>
+<strong> {{respuesta | json}}</strong>
+</div>
+
+
+
+
+
+
+
+

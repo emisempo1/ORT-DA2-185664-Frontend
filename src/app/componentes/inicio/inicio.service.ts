@@ -3,6 +3,8 @@ import {Observable, throwError} from 'rxjs'
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http'
 import {catchError,map,tap} from 'rxjs/operators'
 import {environment} from '../../../environments/environment'
+import {TokenI} from '../../models/tokenModel'
+
 
 
 
@@ -12,14 +14,21 @@ import {environment} from '../../../environments/environment'
 export class InicioService {
 
   private urlLogin = environment.apiUrl + '/Login';
+  private urlToken = environment.apiUrl + '/Token';
 
   respuesta:boolean = false;
+  obs:Observable<boolean>;
 
   constructor (private http: HttpClient){}
 
-  Login(unEmail:string,unaPassword:string):boolean{
-  this.http.get<boolean>(this.urlLogin,{ params: {email:unEmail ,password:unaPassword }}).subscribe(data =>  this.respuesta = data); 
-  return this.respuesta;
+   ComprobarToken(token:string):Observable<boolean>{
+    this.obs = this.http.get<boolean>(this.urlToken,{ params: {token:token}}).pipe(catchError(this.handleError));
+    this.obs.subscribe(data =>  this.respuesta = data);
+    return this.obs;
+    }
+
+  Login(unEmail:string,unaPassword:string):Observable<TokenI>{
+    return this.http.get<TokenI>(this.urlLogin,{ params: {email:unEmail, password: unaPassword}}).pipe(catchError(this.handleError)); 
   }
 
   handleError(error: HttpErrorResponse){

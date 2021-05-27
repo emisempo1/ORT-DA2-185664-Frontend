@@ -5,6 +5,7 @@ import {AudioComponent} from './componentes/audio/audio.component';
 import {PlaylistComponent} from './componentes/playlist/playlist.component';
 import {CategoriaComponent} from './componentes/categoria/categoria.component';
 import {NavegacionComponent} from './componentes/navegacion/navegacion.component';
+import {PsicologoComponent} from './componentes/psicologo/psicologo.component';
 import { AuthGuard } from './guard/auth.guard';
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'Playlist' , component:PlaylistComponent,canActivate:[AuthGuard] },
   {path:'Categoria' , component:CategoriaComponent,canActivate:[AuthGuard] },
   {path:'Navegacion' , component:NavegacionComponent,canActivate:[AuthGuard] },
+  {path:'Psicologo' , component:PsicologoComponent,canActivate:[AuthGuard] },
 ];
 
 @NgModule({

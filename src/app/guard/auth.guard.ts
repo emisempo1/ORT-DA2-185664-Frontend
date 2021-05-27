@@ -10,11 +10,11 @@ import { InicioService } from '../componentes/inicio/inicio.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor (private inicioComponent: InicioService){}
+  constructor (private inicioService: InicioService){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.inicioComponent.respuesta
+    return this.inicioService.respuesta
   }
   
 }
