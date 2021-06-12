@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: "https://localhost:44338/api"
+  apiUrl: "https://descontracturante3.azurewebsites.net/api"
 };
 
 

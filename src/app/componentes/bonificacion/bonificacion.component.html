@@ -1,0 +1,34 @@
+<strong>  Bonificaciones No Aprobadas Aun     </strong>
+
+<mat-accordion [multi]="false" #accordion="matAccordion">
+  <mat-expansion-panel [expanded]="isOpen"  *ngFor="let bonificacion of listaBonificacion ;let indexOfelement=index;">
+    <mat-expansion-panel-header (click)="SetEmail(bonificacion.Email)">
+        <strong> {{index}} Email Paciente :  {{bonificacion.Email}} </strong>   
+  </mat-expansion-panel-header> 
+
+
+                <ng-template matExpansionPanelContent>
+
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Seleccione el Porcentaje a Aprobar De Descuento en la Proxima Consulta Del Paciente</mat-label>
+                    <mat-select [(ngModel)]= "bonificacionAprobada.PorcentajeDescuento" >
+                    <mat-option value="15">15%</mat-option>
+                    <mat-option value="25">25%</mat-option>
+                    <mat-option value="50">50%</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                    <button id="basic" type="button" mat-button (click)="AprobarBonificacion()">
+                    Aprobar
+                    </button>
+               </div>
+               <br> 
+               <div>
+                   <strong> {{respuesta | json}}</strong>
+                </div>
+                </ng-template>
+
+</mat-expansion-panel>
+</mat-accordion>

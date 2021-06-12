@@ -1,0 +1,23 @@
+<p>Seleccione la forma a Importar</p>
+
+<mat-form-field appearance="fill">
+    <mat-label>Seleccione el tipo a Importar</mat-label>
+    <mat-select [(ngModel)]= "Importacion.TipoDeArchivo" (click)="EstablecerPath()">
+        <mat-option value="XML" (click)="EstablecerPath()" >XML</mat-option>
+      <mat-option value="Json" (click)="EstablecerPath()" >Json</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <input type="text" class="form-control" [(ngModel)]="Importacion.Path" placeholder="Path al Archivo Json o CSV">
+
+  <button id="basic" type="button" mat-button (click)="Importar(Importacion)">
+     Importar
+  </button>
+
+
+  <div>
+    <strong> {{respuesta | json}}</strong>
+    </div>
+    
+

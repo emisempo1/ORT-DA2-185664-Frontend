@@ -21,6 +21,9 @@ import { PlaylistComponent } from './componentes/playlist/playlist.component';
 import { CategoriaComponent } from './componentes/categoria/categoria.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { PsicologoComponent } from './componentes/psicologo/psicologo.component';
+import { ImportacionComponent } from './componentes/importacion/importacion.component';
+import { SolicitudComponent } from './componentes/solicitud/solicitud.component';
+import { BonificacionComponent } from './componentes/bonificacion/bonificacion.component';
 
 
 
@@ -35,6 +38,9 @@ import { PsicologoComponent } from './componentes/psicologo/psicologo.component'
     CategoriaComponent,
     NavegacionComponent,
     PsicologoComponent,
+    ImportacionComponent,
+    SolicitudComponent,
+    BonificacionComponent,
    
   ],
   imports: [

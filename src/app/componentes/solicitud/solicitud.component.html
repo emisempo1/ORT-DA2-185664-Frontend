@@ -1,0 +1,27 @@
+
+<h1>Agregar Solicitud</h1>
+
+<input type="text" class="form-control" [(ngModel)]="SolicitudFormulario.Celular" placeholder="Celular">
+<input type="text" class="form-control" [(ngModel)]="SolicitudFormulario.Email" placeholder="Email">
+<input type="text" class="form-control" [(ngModel)]="SolicitudFormulario.Nombre" placeholder="Nombre">
+<input type="text" class="form-control" [(ngModel)]="SolicitudFormulario.FechaNacimiento" placeholder="FechaNacimiento">
+<input type="text" class="form-control" [(ngModel)]="SolicitudFormulario.Problematica" placeholder="Problematica">
+
+
+<mat-form-field appearance="fill">
+    <mat-label>Seleccione los minutos de la consulta</mat-label>
+    <mat-select [(ngModel)]= "SolicitudFormulario.MinutosDeLaConsulta" >
+      <mat-option value="60">Una Hora</mat-option>
+      <mat-option value="90">Una Hora y Media</mat-option>
+      <mat-option value="120">Dos Horas</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+
+<button id="basic" type="button" mat-button (click)="Agregar(SolicitudFormulario)"> Agregar Solicitud </button>
+
+
+<strong> {{respuesta | json}}</strong>
+</div>
+
